@@ -27,10 +27,10 @@ GitHub公開後は **Add package from git URL...** も使用できます。
 パッケージを公開リポジトリの `Packages/com.baxter.material-override-vrm/` に置く構成で、URLは次の形式です。
 
 ```text
-https://github.com/OWNER/REPOSITORY.git?path=/Packages/com.baxter.material-override-vrm#TAG
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.1.0
 ```
 
-`OWNER` / `REPOSITORY` / `TAG` は公開先と実在するタグに置き換えてください。公開先URLはまだ未確定です。
+このURLは `v0.1.0` タグを指定しています。タグ公開後に導入できます。
 Git依存の取得にはGitが必要です。Unity CLI LoopやlilToonはパッケージの依存ではありません。
 
 URPアセットをGraphics / Quality設定へ割り当てたプロジェクトを使用してください。
