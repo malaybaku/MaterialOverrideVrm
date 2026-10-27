@@ -1,0 +1,6 @@
+{
+  "name": "MaterialOverridableVrm.Runtime",
+  "rootNamespace": "Baku.MaterialOverridableVrm",
+  "references": ["UniGLTF", "UniGLTF.Utils", "VRM10"],
+  "autoReferenced": true
+}

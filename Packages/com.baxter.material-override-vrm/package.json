@@ -1,0 +1,14 @@
+{
+  "name": "com.baxter.material-override-vrm",
+  "version": "0.1.0",
+  "displayName": "Material Overridable VRM",
+  "description": "Export and import VRM binaries with Unity material overrides in AssetBundles.",
+  "unity": "2022.3",
+  "author": { "name": "Baxter" },
+  "license": "Zlib",
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "14.0.10",
+    "com.vrmc.gltf": "0.131.4",
+    "com.vrmc.vrm": "0.131.4"
+  }
+}

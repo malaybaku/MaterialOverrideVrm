@@ -1,0 +1,7 @@
+{
+  "name": "MaterialOverridableVrm.Editor",
+  "rootNamespace": "Baku.MaterialOverridableVrm.Editor",
+  "references": ["MaterialOverridableVrm.Runtime", "UniGLTF", "UniGLTF.Utils", "VRM10"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}
