@@ -30,8 +30,7 @@ GitHub公開後は **Add package from git URL...** も使用できます。
 https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.1.0
 ```
 
-このURLは `v0.1.0` タグを指定しています。タグ公開後に導入できます。
-Git依存の取得にはGitが必要です。Unity CLI LoopやlilToonはパッケージの依存ではありません。
+このURLは `v0.1.0` タグを指定しています。
 
 URPアセットをGraphics / Quality設定へ割り当てたプロジェクトを使用してください。
 非URP状態では保存ダイアログより前にexportを停止し、URPが必要な旨をダイアログで表示します。
