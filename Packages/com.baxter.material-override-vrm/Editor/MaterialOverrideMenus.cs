@@ -15,7 +15,7 @@ namespace Baku.MaterialOverridableVrm.Editor
             IsExporting = true;
             try
             {
-                if (!MaterialOverrideRenderPipeline.CheckForExportWithDialog()) return;
+                if (!CheckExportPrerequisites(EditorUserBuildSettings.activeBuildTarget)) return;
                 var path = EditorUtility.SaveFilePanel("Export Material Overridable VRM", "", source.name, "mouv");
                 if (string.IsNullOrEmpty(path)) return;
                 await MaterialOverrideExporter.ExportAsync(source, path);
@@ -27,6 +27,23 @@ namespace Baku.MaterialOverridableVrm.Editor
                 Debug.LogException(e, source);
             }
             finally { IsExporting = false; }
+        }
+
+        internal static bool IsWindowsTarget(BuildTarget target) =>
+            target == BuildTarget.StandaloneWindows || target == BuildTarget.StandaloneWindows64;
+
+        internal static bool CheckExportPrerequisites(BuildTarget target)
+        {
+            if (!IsWindowsTarget(target))
+            {
+                var japanese = MaterialOverrideEditorLanguage.IsJapaneseEditor();
+                var message = japanese
+                    ? $"現在のビルドターゲットは {target} です。\n\nこのまま出力したBundleは、Windowsアプリで読み込めません。続行しますか？"
+                    : $"The current build target is {target}.\n\nThe exported bundle cannot be loaded by Windows applications. Continue?";
+                if (!EditorUtility.DisplayDialog(japanese ? "Windows以外へのエクスポート" : "Non-Windows Export",
+                    message, "OK", japanese ? "キャンセル" : "Cancel")) return false;
+            }
+            return MaterialOverrideRenderPipeline.CheckForExportWithDialog();
         }
 
         [MenuItem("Tools/Material Overridable VRM/Import Bundle (Play Mode)")]

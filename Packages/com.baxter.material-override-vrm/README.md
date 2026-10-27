@@ -51,7 +51,9 @@ Bundleビルド中だけURPのUnused Variants / Unused Post Processing Variants 
 
 すべてNoneなら差し替えなしでexportできます。同じMaterialを複数のBindingに指定できます。
 一覧の手動追加・削除・並べ替えはできません。階層やMaterial構成を変えたら `Reload Bindings` で不足分の追加と不要分の削除を一括実行します。
-URPが有効なEdit Modeでexportしてください。BundleのBuildTargetは現在のEditorの選択を使用するため、基本的にWindowsをターゲットとして下さい
+URPが有効なEdit Modeでexportしてください。BundleのBuildTargetは現在のEditorの選択を使用します。
+Windows以外のターゲットでは、Windowsアプリで読み込めない旨をOK / Cancelで確認します。この確認はURPのチェックより先に行い、OKを選んだ場合だけ続行します。ターゲットの自動変更は行いません。
+この確認はInspectorのExport操作に対して行います。コードから直接ExportAsyncを呼ぶ場合は、呼び出し側でターゲットを確認してください。
 
 ## Import
 
