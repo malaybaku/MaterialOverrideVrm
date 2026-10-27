@@ -21,9 +21,7 @@ Unity 2022.3.22f1 / URP 14.0.10とUnity 6000.3.13f1 / URP 17.3.0で検証して�
 "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4"
 ```
 
-次にPackage Managerの **Add package from disk...** で、本パッケージの `package.json` を指定します。
-GitHub公開後は **Add package from git URL...** も使用できます。
-パッケージを公開リポジトリの `Packages/com.baxter.material-override-vrm/` に置く構成で、URLは次の形式です。
+次にPackage Managerの **Add package from git URL...** で下記を指定して導入します。
 
 ```text
 https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.1.0
