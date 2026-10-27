@@ -17,6 +17,4 @@ Git URLから導入する場合は、Package Managerの **Add package from git U
 https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.1.0
 ```
 
-このURLは `v0.1.0` タグを指定しています。
-
 パッケージ本体は `Packages/com.baxter.material-override-vrm/` にあります。サンプルプロジェクトやモデルは同梱していません。
