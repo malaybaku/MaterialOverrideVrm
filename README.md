@@ -14,7 +14,9 @@ Unity / URP向けに、VRM 1.0のバイナリと差し替えMaterialを `.mouv` 
 Git URLから導入する場合は、Package Managerの **Add package from git URL...** に以下の形式で指定します。
 
 ```text
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.1.0
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.2.0
 ```
 
-パッケージ本体は `Packages/com.baxter.material-override-vrm/` にあります。サンプルプロジェクトやモデルは同梱していません。
+パッケージ本体は `Packages/com.baxter.material-override-vrm/` にあります。
+
+エクスポート用のテンプレートプロジェクトは [Examples](Examples/README.md) にあります。Unity 2022 / Unity 6それぞれの依存関係とURP設定、作業用シーンを用意しています。モデルは同梱していません。
