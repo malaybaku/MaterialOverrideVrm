@@ -1,6 +1,6 @@
 # Material Overridable VRM
 
-Unity / URP向けに、VRM 1.0のバイナリと差し替えMaterialを `.mouv` AssetBundleとしてexport / importするUPMパッケージです。
+Unity / URP向けに、VRM 0.x / 1.0のバイナリと差し替えMaterialを `.mouv` AssetBundleとしてexport / importするUPMパッケージです。
 
 - Package ID: `com.baxter.material-override-vrm`
 - Author: Baxter

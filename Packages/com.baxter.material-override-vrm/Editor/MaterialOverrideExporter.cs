@@ -32,9 +32,9 @@ namespace Baku.MaterialOverridableVrm.Editor
             try
             {
                 data.VrmBytes = File.ReadAllBytes(sourcePath);
-                validationInstance = await Vrm10.LoadBytesAsync(data.VrmBytes, canLoadVrm0X: false,
+                validationInstance = await Vrm10.LoadBytesAsync((byte[])data.VrmBytes.Clone(), canLoadVrm0X: true,
                     showMeshes: false, awaitCaller: new ImmediateCaller());
-                if (!validationInstance) throw new ArgumentException("Source must be a VRM 1.0 model.");
+                if (!validationInstance) throw new ArgumentException("Source must be a VRM 1.0 or migratable VRM 0.x model.");
                 data.Bindings = RendererBindingResolver.Resolve(source, data.VrmBytes, validationInstance.GetComponent<RuntimeGltfInstance>());
                 MaterialOverrideApplicator.Validate(data);
                 foreach (var binding in data.Bindings)

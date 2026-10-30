@@ -2,10 +2,9 @@
 
 UPM ID: `com.baxter.material-override-vrm` / Author: Baxter / License: [zlib/png (Zlib)](LICENSE)
 
-VRM 1.0の元バイナリとUnityの差し替えマテリアルを、1つのAssetBundleに格納します。
+VRM 0.x / 1.0の元バイナリとUnityの差し替えマテリアルを、1つのAssetBundleに格納します。
 出力拡張子は `.mouv`（Material Override Unity VRM）です。Unity向けの形式であり、通常のVRMファイルとして扱うことはできません。
 Unity 2022.3.22f1 / URP 14.0.10とUnity 6000.3.13f1 / URP 17.3.0で検証しています（Windows Editor）。
-2022製BundleのUnity 6での読み込み・描画も、非公開の3モデルと検証用Shaderで確認しています。
 モデル、検証用Shader、サンプルプロジェクトはこのパッケージには含みません。
 
 ## 導入
@@ -38,7 +37,7 @@ Bundleビルド中だけURPのUnused Variants / Unused Post Processing Variants 
 
 ## Export
 
-1. 元のVRM 1.0ファイルをAssetsへ配置し、UniVRMで読み込みます。
+1. 元のVRM 0.x / 1.0ファイルをAssetsへ配置し、UniVRMで読み込みます。
 2. シーン上のモデルのrootに `MaterialOverrideSource` を追加します。
 3. アタッチ時に子のMeshRenderer / SkinnedMeshRendererの全slot（非アクティブな子も含む）がBindingsへ自動登録されます。
    `Source Vrm` もPrefabの由来から自動設定されます（Variant対応）。特定できない場合は手動指定し、差し替えたい行だけ設定します。
@@ -47,11 +46,9 @@ Bundleビルド中だけURPのUnused Variants / Unused Post Processing Variants 
    - `Override`: ユーザーが編集する差し替え先。初期値Noneの行は差し替えず、exportの対応表にも入りません。
 4. Inspectorの `Export...` で保存先を選び、`.mouv` を出力します。
 
-すべてNoneなら差し替えなしでexportできます。同じMaterialを複数のBindingに指定できます。
+同じMaterialは複数のBindingに指定できます。
 一覧の手動追加・削除・並べ替えはできません。階層やMaterial構成を変えたら `Reload Bindings` で不足分の追加と不要分の削除を一括実行します。
-URPが有効なEdit Modeでexportしてください。BundleのBuildTargetは現在のEditorの選択を使用します。
-Windows以外のターゲットでは、Windowsアプリで読み込めない旨をOK / Cancelで確認します。この確認はURPのチェックより先に行い、OKを選んだ場合だけ続行します。ターゲットの自動変更は行いません。
-この確認はInspectorのExport操作に対して行います。コードから直接ExportAsyncを呼ぶ場合は、呼び出し側でターゲットを確認してください。
+BundleのBuildTargetは現在のEditorの選択を使用します。
 
 ### Editorでのプレビュー
 
@@ -83,6 +80,7 @@ UniVRM内部のMaterial索引・Expression参照用に、元Materialを省略し
 
 既存の `RuntimeGltfInstance` に対しては `MaterialOverrideApplicator.Apply(instance, data)` を使えます。
 **instanceは必ずdata.VrmBytesと同じVRMから、構造を変更せずに読み込んだものを指定してください。**
+VRM 0.xの場合は `Vrm10.LoadBytesAsync` の `canLoadVrm0X: true` で移行して読み込んだinstanceを使用してください。
 索引やスロット数は検証しますが、別モデルとの同一性は自動判定しません。
 返された `MaterialOverrideLease` をDisposeすると差し替えMaterialを解放し、そのMaterialを参照しているslotをNoneにします。元Materialは復元しません。
 元の見た目のモデルが必要なら `data.VrmBytes` をUniVRMで新しくロードしてください。
@@ -97,7 +95,6 @@ UniVRMのロード、Applyを組み合わせた独自の所有ハンドルを利
 ## 保証しない動作
 
 - VRMのMaterialBindingを使うExpression（色・UV等）。動かない／意図と異なる結果になっても補正しません。
-- VRM 0.xの読み込み・移行。
 - 異なるBuildTarget、Unity世代、URP世代、Graphics API間でのシェーダー互換性（個別検証が必要）。
 - 任意の入力Bundleの安全性。信頼できる作成元のファイルを使用してください。
 
