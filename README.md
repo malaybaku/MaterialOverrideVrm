@@ -20,3 +20,10 @@ https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.m
 パッケージ本体は `Packages/com.baxter.material-override-vrm/` にあります。
 
 エクスポート用のテンプレートプロジェクトは [Examples](Examples/README.md) にあります。Unity 2022 / Unity 6それぞれの依存関係とURP設定、作業用シーンを用意しています。モデルは同梱していません。
+
+## テンプレートプロジェクトのダウンロード
+
+[v0.2.0リリース](https://github.com/malaybaku/MaterialOverrideVrm/releases/tag/v0.2.0)から、エクスポート用のテンプレートプロジェクトをzipでダウンロードできます。
+
+- [Unity 2022.3.22f1用](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.2.0/MaterialOverrideVrm-Unity2022-v0.2.0.zip)
+- [Unity 6000.3.13f1（Unity 6.3 LTS）用](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.2.0/MaterialOverrideVrm-Unity6-v0.2.0.zip)
