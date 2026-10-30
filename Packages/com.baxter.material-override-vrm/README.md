@@ -24,7 +24,7 @@ Unity 2022.3.22f1 / URP 14.0.10とUnity 6000.3.13f1 / URP 17.3.0で検証して�
 次にPackage Managerの **Add package from git URL...** で下記を指定して導入します。
 
 ```text
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.1.0
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.2.0
 ```
 
 URPアセットをGraphics / Quality設定へ割り当てたプロジェクトを使用してください。
