@@ -53,6 +53,12 @@ URPが有効なEdit Modeでexportしてください。BundleのBuildTargetは現
 Windows以外のターゲットでは、Windowsアプリで読み込めない旨をOK / Cancelで確認します。この確認はURPのチェックより先に行い、OKを選んだ場合だけ続行します。ターゲットの自動変更は行いません。
 この確認はInspectorのExport操作に対して行います。コードから直接ExportAsyncを呼ぶ場合は、呼び出し側でターゲットを確認してください。
 
+### Editorでのプレビュー
+
+シーン上のモデルを選択してPlay Modeに入り、Inspectorの `Preview Material Override (Play Mode)` を押すと、Bindingsのセットアップに基づいてマテリアルを適用します。
+マテリアル適用後は、 `Stop Material Override Preview` を行うか、Play Modeを終了することで元のマテリアル表示に戻ります。
+プレビュー中はBindingsの設定は変更できなくなります。
+
 ## Import
 
 Unityのメインスレッドから呼び出してください。

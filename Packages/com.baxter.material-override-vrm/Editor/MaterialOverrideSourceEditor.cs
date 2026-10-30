@@ -9,8 +9,36 @@ namespace Baku.MaterialOverridableVrm.Editor
     public sealed class MaterialOverrideSourceEditor : UnityEditor.Editor
     {
         private bool _converting;
+        private string _previewError;
         private readonly Dictionary<int, bool> _rendererFoldouts = new Dictionary<int, bool>();
         public override void OnInspectorGUI()
+        {
+            var source = (MaterialOverrideSource)target;
+            var previewing = MaterialOverridePreview.IsActive(source);
+            using (new EditorGUI.DisabledScope(previewing)) DrawExportSettings();
+            using (new EditorGUI.DisabledScope(_converting || MaterialOverrideMenus.IsExporting ||
+                !EditorApplication.isPlaying || !Application.IsPlaying(source) || EditorUtility.IsPersistent(source) ||
+                EditorApplication.isCompiling || EditorApplication.isUpdating))
+            {
+                if (GUILayout.Button(previewing ? "Stop Material Override Preview" : "Preview Material Override (Play Mode)"))
+                {
+                    _previewError = null;
+                    try
+                    {
+                        if (previewing) MaterialOverridePreview.Stop(source);
+                        else MaterialOverridePreview.Start(source);
+                    }
+                    catch (Exception e) { _previewError = e.Message; }
+                    Repaint();
+                }
+            }
+            if (previewing)
+                EditorGUILayout.HelpBox("Preview is active. Stop preview to edit bindings. Original materials are restored when preview stops or Play Mode ends.", MessageType.Info);
+            if (!string.IsNullOrEmpty(_previewError)) EditorGUILayout.HelpBox(_previewError, MessageType.Warning);
+            using (new EditorGUI.DisabledScope(MaterialOverridePreview.IsActive(source))) DrawBindingSettings();
+        }
+
+        private void DrawExportSettings()
         {
             serializedObject.Update();
             EditorGUILayout.PropertyField(serializedObject.FindProperty("SourceVrm"));
@@ -26,6 +54,11 @@ namespace Baku.MaterialOverridableVrm.Editor
                 if (GUILayout.Button(new GUIContent(MaterialOverrideMenus.IsExporting ? "Exporting..." : "Export...",
                     "Export this component to a .mouv AssetBundle. Choose the destination in the save dialog."))) Export(source);
             }
+        }
+
+        private void DrawBindingSettings()
+        {
+            var source = (MaterialOverrideSource)target;
             serializedObject.Update();
             DrawBindings(serializedObject.FindProperty("RendererBindings"));
             serializedObject.ApplyModifiedProperties();
