@@ -24,7 +24,7 @@ VRM 0.x / 1.0のマテリアルをUnityで差し替え、対応アプリで読�
 次にPackage Managerの **Add package from git URL...** で下記を指定します。
 
 ```text
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.2.0
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.0
 ```
 
 URPも自動で導入されます。Unity 6ではプロジェクトのmanifestでURP 17.3.0を指定してください。

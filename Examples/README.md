@@ -9,7 +9,7 @@ VRMを持ち込んでマテリアルを設定・プレビュー・エクスポ�
 
 1. 使用するプロジェクトフォルダをUnity Hubへ追加し、対応するバージョンで開きます。初回のパッケージ取得にはインターネット接続とGitが必要です。
 2. `Assets/Scenes/Export.unity` を開きます。
-3. VRM 1.0ファイルをAssetsへ追加し、シーンの原点へ配置します。
+3. VRM 0.x / 1.0ファイルをAssetsへ追加し、シーンの原点へ配置します。
 4. モデルのrootへ `MaterialOverrideSource` を追加し、BindingsのOverrideを設定します。
 5. Play Modeでプレビューし、Edit Modeへ戻って `Export...` から `.mouv` を出力します。
 
