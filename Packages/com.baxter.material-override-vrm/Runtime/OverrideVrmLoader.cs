@@ -16,9 +16,9 @@ namespace Baku.MaterialOverridableVrm
         internal static async Task<Vrm10Instance> LoadAsync(MaterialOverrideData data, CancellationToken ct)
         {
             ct.ThrowIfCancellationRequested();
-            using var parsed = new GlbLowLevelParser("", data.VrmBytes).Parse();
-            var vrm = Vrm10Data.Parse(parsed);
-            if (vrm == null) throw new InvalidDataException("The embedded file is not a VRM 1.0 model.");
+            using var input = new OverrideVrmData(data.VrmBytes);
+            var parsed = input.Data;
+            var vrm = input.Vrm;
             var targets = new HashSet<(int, int)>(data.Bindings.Select(b => (b.MeshIndex, b.MaterialSlot)));
             var needed = new HashSet<int>();
             foreach (var node in parsed.GLTF.nodes)

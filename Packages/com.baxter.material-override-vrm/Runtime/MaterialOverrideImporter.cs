@@ -23,7 +23,7 @@ namespace Baku.MaterialOverridableVrm
         }
     }
 
-    /// <summary>Main-thread API. VRM 1.0 only. Bundle target must match the running platform.</summary>
+    /// <summary>Main-thread API. VRM 1.0 and migrated VRM 0.x. Bundle target must match the running platform.</summary>
     public static class MaterialOverrideImporter
     {
         private sealed class Entry { public AssetBundle Bundle; public int Users; }
@@ -50,7 +50,7 @@ namespace Baku.MaterialOverridableVrm
                 var data = roots[0];
                 MaterialOverrideApplicator.Validate(data);
                 instance = await OverrideVrmLoader.LoadAsync(data, ct);
-                if (!instance) throw new InvalidDataException("The embedded file is not a VRM 1.0 model.");
+                if (!instance) throw new InvalidDataException("The embedded VRM could not be loaded.");
                 ct.ThrowIfCancellationRequested();
                 var runtime = instance.GetComponent<RuntimeGltfInstance>();
                 var lease = MaterialOverrideApplicator.Apply(runtime, data);

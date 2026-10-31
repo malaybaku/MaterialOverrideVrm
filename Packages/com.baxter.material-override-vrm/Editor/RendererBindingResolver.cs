@@ -18,7 +18,8 @@ namespace Baku.MaterialOverridableVrm.Editor
             if (source.RendererBindings.Length == 0)
                 return source.Bindings?.Where(b => b == null || b.Material).Select(b => b == null ? null : new MaterialOverrideBinding
                 { MeshIndex = b.MeshIndex, MaterialSlot = b.MaterialSlot, Material = b.Material }).ToArray();
-            using var parsed = new GlbLowLevelParser("", bytes).Parse();
+            using var input = new OverrideVrmData(bytes);
+            var parsed = input.Data;
             var result = new List<MaterialOverrideBinding>();
             foreach (var binding in source.RendererBindings)
             {
@@ -91,10 +92,11 @@ namespace Baku.MaterialOverridableVrm.Editor
             if (source.RendererBindings.Any(b => b != null && b.ReplacementMaterial))
                 throw new InvalidOperationException("Configured renderer bindings already exist.");
             var bytes = File.ReadAllBytes(AssetDatabase.GetAssetPath(source.SourceVrm));
-            var model = await Vrm10.LoadBytesAsync(bytes, canLoadVrm0X: false, showMeshes: false, awaitCaller: new ImmediateCaller());
+            var model = await Vrm10.LoadBytesAsync((byte[])bytes.Clone(), canLoadVrm0X: true, showMeshes: false, awaitCaller: new ImmediateCaller());
             try
             {
-                using var parsed = new GlbLowLevelParser("", bytes).Parse();
+                using var input = new OverrideVrmData(bytes);
+                var parsed = input.Data;
                 var reference = model.GetComponent<RuntimeGltfInstance>();
                 var converted = new List<RendererMaterialOverrideBinding>();
                 foreach (var old in source.Bindings)

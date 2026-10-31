@@ -44,7 +44,8 @@ namespace Baku.MaterialOverridableVrm
             if (instance.GetComponent<MaterialOverrideLease>())
                 throw new InvalidOperationException("Overrides are already applied to this instance.");
             Validate(data);
-            using var parsed = new GlbLowLevelParser("", data.VrmBytes).Parse();
+            using var input = new OverrideVrmData(data.VrmBytes);
+            var parsed = input.Data;
             if (instance.Nodes.Count != parsed.GLTF.nodes.Count)
                 throw new ArgumentException("The loaded instance does not match the source VRM node count.");
 
