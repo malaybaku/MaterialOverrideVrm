@@ -1,6 +1,6 @@
 {
   "name": "com.baxter.material-override-vrm",
-  "version": "0.1.0",
+  "version": "0.3.1",
   "displayName": "Material Overridable VRM",
   "description": "Export and import VRM binaries with Unity material overrides in AssetBundles.",
   "unity": "2022.3",
