@@ -1,16 +1,5 @@
 {
   "dependencies": {
-    "com.baxter.material-override-vrm": {
-      "version": "https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.render-pipelines.universal": "14.0.10",
-        "com.vrmc.gltf": "0.131.4",
-        "com.vrmc.vrm": "0.131.4"
-      },
-      "hash": "edeace174bb2757c19c6bc37f3f87124e4db6904"
-    },
     "com.unity.burst": {
       "version": "1.8.29",
       "depth": 2,
