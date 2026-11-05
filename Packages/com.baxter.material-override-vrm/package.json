@@ -1,14 +1,19 @@
 {
   "name": "com.baxter.material-override-vrm",
-  "version": "0.3.1",
-  "displayName": "Material Overridable VRM",
+  "version": "0.3.2",
+  "displayName": "Material Overridable VRM (Core Library)",
   "description": "Export and import VRM binaries with Unity material overrides in AssetBundles.",
   "unity": "2022.3",
-  "author": { "name": "Baxter" },
+  "author": {
+    "name": "Baxter",
+    "url": "https://github.com/malaybaku"
+  },
   "license": "Zlib",
   "dependencies": {
-    "com.unity.render-pipelines.universal": "14.0.10",
-    "com.vrmc.gltf": "0.131.4",
-    "com.vrmc.vrm": "0.131.4"
-  }
+    "com.unity.render-pipelines.universal": "14.0.10"
+  },
+  "url": "https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.2/com.baxter.material-override-vrm-0.3.2.zip",
+  "repo": "https://malaybaku.github.io/baku-vpm/index.json",
+  "changelogUrl": "https://github.com/malaybaku/MaterialOverrideVrm/blob/main/CHANGELOG.md",
+  "documentationUrl": "https://github.com/malaybaku/MaterialOverrideVrm#readme"
 }

@@ -15,7 +15,7 @@ Unity / URP向けに、VRM 0.x / 1.0のバイナリと差し替えMaterialを `.
 Git URLから導入する場合は、Package Managerの **Add package from git URL...** に以下の形式で指定します。
 
 ```text
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.1
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.2
 ```
 
 パッケージ本体は `Packages/com.baxter.material-override-vrm/` にあります。
@@ -24,12 +24,12 @@ https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.m
 
 ## テンプレートプロジェクトのダウンロード
 
-[v0.3.1リリース](https://github.com/malaybaku/MaterialOverrideVrm/releases/tag/v0.3.1)から、エクスポート用のテンプレートプロジェクトをzipでダウンロードできます。
+[v0.3.2リリース](https://github.com/malaybaku/MaterialOverrideVrm/releases/tag/v0.3.2)から、エクスポート用のテンプレートプロジェクトをzipでダウンロードできます。
 
-- [Unity 2022.3.22f1用](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.1/MaterialOverrideVrm-Unity2022-v0.3.1.zip)
-- [Unity 6000.3.13f1（Unity 6.3 LTS）用](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.1/MaterialOverrideVrm-Unity6-v0.3.1.zip)
+- [Unity 2022.3.22f1用](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.2/MaterialOverrideVrm-Unity2022-v0.3.2.zip)
+- [Unity 6000.3.13f1（Unity 6.3 LTS）用](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.2/MaterialOverrideVrm-Unity6-v0.3.2.zip)
 
 ## パッケージ単体ZIP
 
-v0.3.1以降では、テンプレートプロジェクトとは別にパッケージ部分のzipも取得できます: [com.baxter.material-override-vrm-0.3.1.zip](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.1/com.baxter.material-override-vrm-0.3.1.zip) 
+v0.3.1以降では、テンプレートプロジェクトとは別にパッケージ部分のzipも取得できます: [com.baxter.material-override-vrm-0.3.2.zip](https://github.com/malaybaku/MaterialOverrideVrm/releases/download/v0.3.2/com.baxter.material-override-vrm-0.3.2.zip)
 UniVRM 0.131.4以降を導入済みのプロジェクトに対し、ZIPを展開後、UPMの **Add package from disk...** から展開先のpackage.jsonを指定できます。この方法でパッケージを導入する場合、ZIPの展開先は導入後も導入したプロジェクトから参照されます。フォルダパスが維持できる場所にパッケージを配置してください。
