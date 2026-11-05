@@ -7,7 +7,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = 'com.baxter.material-override-vrm'
-TAG = 'v0.3.1'
+TAG = 'v0.3.2'
 
 def read_json(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
@@ -48,6 +48,12 @@ def build():
     with ZipFile(package) as bundle:
         assert json.loads(bundle.read('package.json'))['version'] == TAG[1:]
         assert 'LICENSE' in bundle.namelist()
+        assert not any(name in manifest.get('dependencies', {}) for name in ('com.vrmc.gltf', 'com.vrmc.vrm'))
+        assert manifest['url'].endswith(f'/{PACKAGE}-{TAG[1:]}.zip')
+        for folder in ('Runtime', 'Editor'):
+            asmdef = json.loads(bundle.read(f'{folder}/MaterialOverridableVrm.{folder}.asmdef'))
+            assert set(asmdef['defineConstraints']) == {'MOUV_HAS_UNIGLTF', 'MOUV_HAS_VRM10'}
+            assert all(d['expression'] == '0.131.4' for d in asmdef['versionDefines'])
         assert any(p.startswith('Editor/') for p in bundle.namelist())
         assert any(p.startswith('Runtime/') for p in bundle.namelist())
     for template in ('Unity2022', 'Unity6'):

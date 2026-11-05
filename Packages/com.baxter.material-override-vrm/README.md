@@ -8,26 +8,40 @@ VRM 0.x / 1.0のマテリアルをUnityで差し替え、対応アプリで読�
 
 ## 導入
 
+### VPM(VRChat Package Manager)での利用について
+
+VRChatアバターを `.mouv` ファイルに変換したい場合、VPMから **Material Override VRM for VRChat** の依存パッケージとして本パッケージを導入できるため、直接このパッケージをインストールする必要はありません。
+
+
+### このパッケージを直接使用する場合
+
+VRMファイルとマテリアルがすでに手元環境にある場合、このパッケージを直接利用できます。
+
 検証済みの環境は以下のとおりです。
 
 - Unity 2022.3.22f1 / URP 14.0.10
 - Unity 6000.3.13f1 / URP 17.3.0
 - UniVRM 0.131.4
 
-まず `Packages/manifest.json` の `dependencies` に以下を追加してください。
+UniVRMと本パッケージを導入します。
+
+`Packages/manifest.json` の `dependencies` に以下を追記します。
 
 ```json
 "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v0.131.4",
-"com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4"
+"com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4",
+"xxx": "https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.2",
 ```
 
-次にPackage Managerの **Add package from git URL...** で下記を指定します。
+または、Package Managerの「+」→ **Add package from git URL...** で、以下の3つを追加します。
 
 ```text
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.1
+https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v0.131.4
+https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.2
 ```
 
-URPも自動で導入されます。Unity 6ではプロジェクトのmanifestでURP 17.3.0を指定してください。
+URPは自動で導入されますが、Unity 6では適切なバージョンが導入されない可能性があります。URP 17.3.0以外のバージョンが導入されている場合、パッケージマネージャー等からバージョンを変更します。
 
 ### URPの設定
 

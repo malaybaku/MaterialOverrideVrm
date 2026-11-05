@@ -1,6 +1,26 @@
 {
   "name": "MaterialOverridableVrm.Runtime",
   "rootNamespace": "Baku.MaterialOverridableVrm",
-  "references": ["UniGLTF", "UniGLTF.Utils", "VRM10"],
-  "autoReferenced": true
+  "references": [
+    "UniGLTF",
+    "UniGLTF.Utils",
+    "VRM10"
+  ],
+  "autoReferenced": true,
+  "versionDefines": [
+    {
+      "define": "MOUV_HAS_UNIGLTF",
+      "name": "com.vrmc.gltf",
+      "expression": "0.131.4"
+    },
+    {
+      "define": "MOUV_HAS_VRM10",
+      "name": "com.vrmc.vrm",
+      "expression": "0.131.4"
+    }
+  ],
+  "defineConstraints": [
+    "MOUV_HAS_UNIGLTF",
+    "MOUV_HAS_VRM10"
+  ]
 }
