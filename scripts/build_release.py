@@ -7,7 +7,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = 'com.baxter.material-override-vrm'
-TAG = 'v0.3.2'
+TAG = 'v0.3.3'
 
 def read_json(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
