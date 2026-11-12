@@ -30,7 +30,7 @@ UniVRMと本パッケージを導入します。
 ```json
 "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v0.131.4",
 "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4",
-"xxx": "https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.2",
+"xxx": "https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.3",
 ```
 
 または、Package Managerの「+」→ **Add package from git URL...** で、以下の3つを追加します。
@@ -38,7 +38,7 @@ UniVRMと本パッケージを導入します。
 ```text
 https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v0.131.4
 https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.2
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.3
 ```
 
 URPは自動で導入されますが、Unity 6では適切なバージョンが導入されない可能性があります。URP 17.3.0以外のバージョンが導入されている場合、パッケージマネージャー等からバージョンを変更します。

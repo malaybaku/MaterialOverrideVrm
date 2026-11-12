@@ -2,8 +2,8 @@
 
 Unity **2022.3.22f1** 用のエクスポート用テンプレートです。
 
-参照パッケージ: Material Overridable VRM (Core Library)（Gitタグ `v0.3.2`）。
+参照パッケージ: Material Overridable VRM (Core Library)（Gitタグ `v0.3.3`）。
 
 モデル・差し替えマテリアルは同梱しません。
 
-[使い方・制約](https://github.com/malaybaku/MaterialOverrideVrm/blob/v0.3.2/Packages/com.baxter.material-override-vrm/README.md)
+[使い方・制約](https://github.com/malaybaku/MaterialOverrideVrm/blob/v0.3.3/Packages/com.baxter.material-override-vrm/README.md)
