@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
@@ -15,7 +15,7 @@ namespace Baku.MaterialOverridableVrm.Editor
         internal static Type UrpType(string name) => AppDomain.CurrentDomain.GetAssemblies()
             .Select(a => a.GetType("UnityEngine.Rendering.Universal." + name)).FirstOrDefault(t => t != null);
 
-        [MenuItem("Tools/Material Overridable VRM/URP Export Setup")]
+        [MenuItem("Tools/Material Override VRM/URP Export Setup", false, 1003)]
         public static void Open()
         {
             var japanese = MaterialOverrideEditorLanguage.IsJapaneseEditor();

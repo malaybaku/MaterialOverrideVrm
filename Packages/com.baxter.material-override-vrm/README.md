@@ -1,4 +1,4 @@
-# Material Overridable VRM
+﻿# Material Overridable VRM
 
 UPM ID: `com.baxter.material-override-vrm` / Author: Baxter / License: [zlib/png (Zlib)](LICENSE)
 
@@ -46,7 +46,7 @@ URPは自動で導入されますが、Unity 6では適切なバージョンが�
 ### URPの設定
 
 URPを有効にしたプロジェクトで使用してください。未設定の場合は、エクスポート時に表示されるダイアログから設定できます。
-`Tools > Material Overridable VRM > URP Export Setup` からも同じ設定を開けます。
+`Tools > Material Override VRM > URP Export Setup` からも同じ設定を開けます。
 
 この操作はGraphicsと現在のQualityのRender Pipeline設定を変更します。既存マテリアルの変換は行いません。
 設定後、もう一度エクスポートしてください。

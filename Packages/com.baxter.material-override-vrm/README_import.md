@@ -1,4 +1,4 @@
-# .mouvの読み込み（アプリ開発者向け）
+﻿# .mouvの読み込み（アプリ開発者向け）
 
 この文書は、`.mouv` を読み込むUnityアプリを開発する方向けのAPIガイドです。
 モデルをセットアップして `.mouv` を出力する手順は [README](README.md) を参照してください。
@@ -19,7 +19,7 @@ var model = await MaterialOverrideImporter.LoadAsync(path, cancellationToken);
 model.Dispose(); // モデルと所有するマテリアル・Bundle参照を解放
 ```
 
-Play Modeでは `Tools > Material Overridable VRM > Import Bundle (Play Mode)` でも確認できます。
+Play Modeでは `Tools > Material Override VRM > Import Bundle (Play Mode)` でも確認できます。
 GameObjectを直接Destroyした場合も、所有コンポーネントがリソースを解放します。
 同一パスのBundleを複数回読む場合は参照カウントで共有し、各モデルの差し替えマテリアルは複製します。
 
