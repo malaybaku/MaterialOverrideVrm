@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
@@ -46,7 +46,7 @@ namespace Baku.MaterialOverridableVrm.Editor
             return MaterialOverrideRenderPipeline.CheckForExportWithDialog();
         }
 
-        [MenuItem("Tools/Material Overridable VRM/Import Bundle (Play Mode)")]
+        [MenuItem("Tools/Material Override VRM/Import Bundle (Play Mode)", false, 1004)]
         private static async void ImportBundle()
         {
             if (!Application.isPlaying) { EditorUtility.DisplayDialog("Material Overridable VRM", "Enter Play Mode before importing.", "OK"); return; }
