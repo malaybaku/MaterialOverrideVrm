@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.4
+
+- Editorの「Import Bundle (Play Mode)」と「Preview Material Override (Play Mode)」にURPの確認を追加しました。URP以外の場合は英語のダイアログを表示し、読み込み・プレビュー開始を中止します。
+- Graphicsと現在のQualityの設定から使用中のRender Pipelineを判定します。プレビュー終了はURP以外でも実行できます。
+
 ## 0.3.3
 
 - UnityのToolsメニューをMaterial Override VRMへ統一しました。

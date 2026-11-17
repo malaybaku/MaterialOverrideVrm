@@ -30,7 +30,7 @@ UniVRMと本パッケージを導入します。
 ```json
 "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v0.131.4",
 "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4",
-"xxx": "https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.3",
+"xxx": "https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.4",
 ```
 
 または、Package Managerの「+」→ **Add package from git URL...** で、以下の3つを追加します。
@@ -38,7 +38,7 @@ UniVRMと本パッケージを導入します。
 ```text
 https://github.com/vrm-c/UniVRM.git?path=/Packages/UniGLTF#v0.131.4
 https://github.com/vrm-c/UniVRM.git?path=/Packages/VRM10#v0.131.4
-https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.3
+https://github.com/malaybaku/MaterialOverrideVrm.git?path=/Packages/com.baxter.material-override-vrm#v0.3.4
 ```
 
 URPは自動で導入されますが、Unity 6では適切なバージョンが導入されない可能性があります。URP 17.3.0以外のバージョンが導入されている場合、パッケージマネージャー等からバージョンを変更します。
@@ -47,6 +47,8 @@ URPは自動で導入されますが、Unity 6では適切なバージョンが�
 
 URPを有効にしたプロジェクトで使用してください。未設定の場合は、エクスポート時に表示されるダイアログから設定できます。
 `Tools > Material Override VRM > URP Export Setup` からも同じ設定を開けます。
+
+Play Mode中の「Preview Material Override (Play Mode)」と「Import Bundle (Play Mode)」もURPが必要です。URP以外の場合はダイアログを表示して中止します。Play Modeを終了してURPを設定し、再実行してください。
 
 この操作はGraphicsと現在のQualityのRender Pipeline設定を変更します。既存マテリアルの変換は行いません。
 設定後、もう一度エクスポートしてください。
