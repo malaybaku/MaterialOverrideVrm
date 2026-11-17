@@ -26,7 +26,8 @@ namespace Baku.MaterialOverridableVrm.Editor
                     try
                     {
                         if (previewing) MaterialOverridePreview.Stop(source);
-                        else MaterialOverridePreview.Start(source);
+                        else if (MaterialOverrideRenderPipeline.CheckForPreviewWithDialog())
+                            MaterialOverridePreview.Start(source);
                     }
                     catch (Exception e) { _previewError = e.Message; }
                     Repaint();

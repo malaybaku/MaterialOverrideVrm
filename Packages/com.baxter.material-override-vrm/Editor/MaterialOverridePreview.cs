@@ -43,6 +43,7 @@ namespace Baku.MaterialOverridableVrm.Editor
         {
             if (!EditorApplication.isPlaying || !Application.IsPlaying(source) || EditorUtility.IsPersistent(source))
                 throw new InvalidOperationException("Preview requires a scene instance in Play Mode.");
+            MaterialOverrideRenderPipeline.RequireUrpForPreview();
             if (IsActive(source)) throw new InvalidOperationException("Preview is already active.");
             if (source.RendererBindings == null || source.RendererBindings.Length == 0)
                 throw new InvalidOperationException("No renderer bindings. Reload or convert legacy bindings before previewing.");

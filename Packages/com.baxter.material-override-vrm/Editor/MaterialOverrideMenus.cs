@@ -50,6 +50,7 @@ namespace Baku.MaterialOverridableVrm.Editor
         private static async void ImportBundle()
         {
             if (!Application.isPlaying) { EditorUtility.DisplayDialog("Material Overridable VRM", "Enter Play Mode before importing.", "OK"); return; }
+            if (!MaterialOverrideRenderPipeline.CheckForPreviewWithDialog()) return;
             var path = EditorUtility.OpenFilePanel("Import Material Overridable VRM", "", "mouv");
             if (string.IsNullOrEmpty(path)) return;
             try
