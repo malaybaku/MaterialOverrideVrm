@@ -20,6 +20,8 @@ model.Dispose(); // モデルと所有するマテリアル・Bundle参照を解
 ```
 
 Play Modeでは `Tools > Material Override VRM > Import Bundle (Play Mode)` でも確認できます。
+
+このEditorメニューはURPが必要です。URP以外の場合はダイアログを表示して中止するため、Play Modeを終了してURPを設定し、再実行してください。
 GameObjectを直接Destroyした場合も、所有コンポーネントがリソースを解放します。
 同一パスのBundleを複数回読む場合は参照カウントで共有し、各モデルの差し替えマテリアルは複製します。
 
