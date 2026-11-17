@@ -19,6 +19,22 @@ namespace Baku.MaterialOverridableVrm.Editor
             return false;
         }
 
+        internal const string PreviewRequiresUrpMessage =
+            "This feature requires Universal Render Pipeline (URP). Exit Play Mode, configure URP, and try again.";
+
+        internal static void RequireUrpForPreview()
+        {
+            if (!IsUniversal(ConfiguredPipeline))
+                throw new InvalidOperationException(PreviewRequiresUrpMessage);
+        }
+
+        internal static bool CheckForPreviewWithDialog()
+        {
+            if (IsUniversal(ConfiguredPipeline)) return true;
+            EditorUtility.DisplayDialog("URP Required", PreviewRequiresUrpMessage, "OK");
+            return false;
+        }
+
         public static RenderPipelineAsset[] FindUrpAssets() => AssetDatabase.FindAssets("t:RenderPipelineAsset")
             .Select(AssetDatabase.GUIDToAssetPath).OrderBy(path => path, StringComparer.Ordinal)
             .Select(AssetDatabase.LoadAssetAtPath<RenderPipelineAsset>).Where(IsUniversal).ToArray();
